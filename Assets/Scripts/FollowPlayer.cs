@@ -12,6 +12,8 @@ public class FollowPlayer : MonoBehaviour
 	{
 		// Setting up the reference.
 		player = GameObject.FindGameObjectWithTag("Player").transform;
+		Debug.Log(player);
+		Debug.Log(player.position);
 	}
 
 	void Update ()

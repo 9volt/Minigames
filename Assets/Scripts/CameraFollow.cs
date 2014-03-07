@@ -47,6 +47,7 @@ public class CameraFollow : MonoBehaviour
 		float targetX = transform.position.x;
 		float targetY = transform.position.y;
 
+
 		// If the player has moved beyond the x margin...
 		if(CheckXMargin())
 			// ... the target x coordinate should be a Lerp between the camera's current x position and the player's current x position.

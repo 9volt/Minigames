@@ -36,7 +36,7 @@ public class PlayerControl : MonoBehaviour
 		// If the jump button is pressed and the player is grounded then the player should jump.
 		if(Input.GetButtonDown("Jump") ){
 			jump = true;
-			Debug.Log("Jumping");
+
 		}
 	}
 
@@ -97,6 +97,7 @@ public class PlayerControl : MonoBehaviour
 		theScale.x *= -1;
 		transform.localScale = theScale;
 	}
+
 
 
 
