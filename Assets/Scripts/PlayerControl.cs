@@ -47,7 +47,8 @@ public class PlayerControl : MonoBehaviour
 		float h = Input.GetAxis("Horizontal");
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
-		//anim.SetFloat("maxSpeed", Mathf.Abs(h));
+		anim.SetFloat("Speed", Mathf.Abs(h));
+		Debug.Log(h);
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 		if(h * rigidbody2D.velocity.x < maxSpeed)
@@ -72,7 +73,7 @@ public class PlayerControl : MonoBehaviour
 		if(jump)
 		{
 			// Set the Jump animator trigger parameter.
-			//anim.SetTrigger("Jump");
+			anim.SetTrigger("Jump");
 
 			// Play a random jump audio clip.
 			//int i = Random.Range(0, jumpClips.Length);
@@ -83,6 +84,7 @@ public class PlayerControl : MonoBehaviour
 
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
+			Debug.Log("jumped");
 		}
 	}
 	
