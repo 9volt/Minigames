@@ -18,13 +18,16 @@ public class PlayerControl : MonoBehaviour
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
 	private bool grounded = false;			// Whether or not the player is grounded.
 	private Animator anim;					// Reference to the player's animator component.
+	private GameObject winText;
 
 
 	void Awake()
 	{
 		// Setting up references.
 		groundCheck = transform.Find("grounded");
+		winText = GameObject.FindGameObjectsWithTag("Finish")[0];
 		anim = GetComponent<Animator>();
+		winText.renderer.enabled = false; 
 	}
 
 
@@ -48,7 +51,7 @@ public class PlayerControl : MonoBehaviour
 
 		// The Speed animator parameter is set to the absolute value of the horizontal input.
 		anim.SetFloat("Speed", Mathf.Abs(h));
-		Debug.Log(h);
+
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
 		if(h * rigidbody2D.velocity.x < maxSpeed)
@@ -84,7 +87,7 @@ public class PlayerControl : MonoBehaviour
 
 			// Make sure the player can't jump again until the jump conditions from Update are satisfied.
 			jump = false;
-			Debug.Log("jumped");
+
 		}
 	}
 	
@@ -98,6 +101,21 @@ public class PlayerControl : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	void OnCollisionEnter2D (Collision2D col)
+	{
+		// If the colliding gameobject is an Enemy...
+		if(col.gameObject.tag == "Yarn"){
+			Debug.Log("Triggered End");
+			winText.renderer.enabled = true;
+			waitafew();
+			Application.LoadLevel("platformer");
+		}
+	}
+
+	IEnumerator waitafew(){
+		yield return new WaitForSeconds(50000);
 	}
 
 
