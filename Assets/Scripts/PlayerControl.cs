@@ -106,16 +106,22 @@ public class PlayerControl : MonoBehaviour
 	void OnCollisionEnter2D (Collision2D col)
 	{
 		// If the colliding gameobject is an Enemy...
+		if(col.gameObject.tag == "Enemy"){
+			Debug.Log("Lost");
+			StartCoroutine(restart_game(1));
+		}
+
 		if(col.gameObject.tag == "Yarn"){
 			Debug.Log("Triggered End");
 			winText.renderer.enabled = true;
-			waitafew();
-			Application.LoadLevel("platformer");
+			StartCoroutine(restart_game(3));
+
 		}
 	}
 
-	IEnumerator waitafew(){
-		yield return new WaitForSeconds(50000);
+	IEnumerator restart_game(float x){
+		yield return new WaitForSeconds(x);
+		Application.LoadLevel("platformer");
 	}
 
 
