@@ -1,12 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="114" Column="20" />
-      <File FileName="Assets\Scripts\PlayerControl.cs" Line="114" Column="20" />
-      <File FileName="Assets\Scripts\CameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PlayerControl.cs" Line="113" Column="1" />
+      <File FileName="Assets\Scripts\CameraFollow.cs" Line="9" Column="26" />
       <File FileName="Assets\Scripts\Score.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\fball_script.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\block_fall.cs" Line="20" Column="143" />
+      <File FileName="Assets\Scripts\Flip_Test.cs" Line="27" Column="20" />
+      <File FileName="Assets\Scripts\Remover.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Destroyer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

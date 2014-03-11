@@ -108,6 +108,9 @@ public class PlayerControl : MonoBehaviour
 		// If the colliding gameobject is an Enemy...
 		if(col.gameObject.tag == "Enemy"){
 			Debug.Log("Lost");
+			this.enabled = false;
+			rigidbody2D.fixedAngle = false;
+			rigidbody2D.AddTorque(-100f);
 			StartCoroutine(restart_game(1));
 		}
 
@@ -122,6 +125,9 @@ public class PlayerControl : MonoBehaviour
 	IEnumerator restart_game(float x){
 		yield return new WaitForSeconds(x);
 		Application.LoadLevel("platformer");
+		this.enabled = true;
+		rigidbody2D.fixedAngle = true;
+
 	}
 
 
