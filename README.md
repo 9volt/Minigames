@@ -1,6 +1,7 @@
 Minigames
 =========
 Status:  In progress.  1 game complete.
+Play at http://9volt.github.io/Minigames/
 
 Eventually a small collection of small games.
 
