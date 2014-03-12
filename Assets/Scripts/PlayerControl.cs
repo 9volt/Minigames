@@ -11,7 +11,9 @@ public class PlayerControl : MonoBehaviour
 
 	public float moveForce = 35f;			// Amount of force added to move the player left and right.
 	public float maxSpeed = 2f;				// The fastest the player can travel in the x axis.
-	public AudioClip[] jumpClips;			// Array of clips for when the player jumps.
+	//public AudioClip jumpClip;			// Clip for when the player jumps.
+	public AudioClip deathClip;			// Clips for when the player dies.
+	public AudioClip winClip;			// Clips for when the player wins.
 	public float jumpForce = 10f;			// Amount of force added when the player jumps.
 
 	private int tauntIndex;					// The index of the taunts array indicating the most recent taunt.
@@ -78,9 +80,9 @@ public class PlayerControl : MonoBehaviour
 			// Set the Jump animator trigger parameter.
 			anim.SetTrigger("Jump");
 
-			// Play a random jump audio clip.
+			// Play a  jump audio clip.
 			//int i = Random.Range(0, jumpClips.Length);
-			//AudioSource.PlayClipAtPoint(jumpClips[i], transform.position);
+			//AudioSource.PlayClipAtPoint(jumpClip, transform.position);
 
 			// Add a vertical force to the player.
 			rigidbody2D.AddForce(new Vector2(0f, jumpForce));
@@ -108,6 +110,7 @@ public class PlayerControl : MonoBehaviour
 		// If the colliding gameobject is an Enemy...
 		if(col.gameObject.tag == "Enemy"){
 			Debug.Log("Lost");
+			AudioSource.PlayClipAtPoint(deathClip, transform.position);
 			this.enabled = false;
 			rigidbody2D.fixedAngle = false;
 			rigidbody2D.AddTorque(-100f);
@@ -118,7 +121,7 @@ public class PlayerControl : MonoBehaviour
 			Debug.Log("Triggered End");
 			winText.renderer.enabled = true;
 			StartCoroutine(restart_game(3));
-
+			AudioSource.PlayClipAtPoint(winClip, transform.position);
 		}
 	}
 
