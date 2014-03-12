@@ -27,6 +27,7 @@ public class PlayerControl : MonoBehaviour
 	{
 		// Setting up references.
 		groundCheck = transform.Find("grounded");
+
 		winText = GameObject.FindGameObjectsWithTag("Finish")[0];
 		anim = GetComponent<Animator>();
 		winText.renderer.enabled = false; 
@@ -36,10 +37,10 @@ public class PlayerControl : MonoBehaviour
 	void Update()
 	{
 		// The player is grounded if a linecast to the groundcheck position hits anything on the ground layer.
-		//grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
+		grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));  
 
 		// If the jump button is pressed and the player is grounded then the player should jump.
-		if(Input.GetButtonDown("Jump") ){
+		if(Input.GetButtonDown("Jump") && grounded){
 			jump = true;
 
 		}
@@ -109,7 +110,7 @@ public class PlayerControl : MonoBehaviour
 	{
 		// If the colliding gameobject is an Enemy...
 		if(col.gameObject.tag == "Enemy"){
-			Debug.Log("Lost");
+			//Debug.Log("Lost");
 			AudioSource.PlayClipAtPoint(deathClip, transform.position);
 			this.enabled = false;
 			rigidbody2D.fixedAngle = false;
@@ -118,7 +119,7 @@ public class PlayerControl : MonoBehaviour
 		}
 
 		if(col.gameObject.tag == "Yarn"){
-			Debug.Log("Triggered End");
+			//Debug.Log("Triggered End");
 			winText.renderer.enabled = true;
 			StartCoroutine(restart_game(3));
 			AudioSource.PlayClipAtPoint(winClip, transform.position);
