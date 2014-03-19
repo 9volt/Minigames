@@ -21,4 +21,4 @@ Harpy's Lair:
  * Unity Pro Game Engine 
  * Unity 2D tutorial
  * Tiled Map Editor
- * Tilde Map import plugin: https://github.com/9volt/tiled_unity 
+ * Tiled Map import plugin: https://github.com/9volt/tiled_unity 
