@@ -23,7 +23,7 @@ Harpy's Lair:
  * Tiled Map Editor
  * Tiled Map import plugin: https://github.com/9volt/tiled_unity 
 
-Monster Fighter
+Monster Fighter:
  * Monster2 by BÜMSTRÜM from the Untiy Asset Store - https://www.assetstore.unity3d.com/#/content/6053
  * Sounds created with www.bfxr.net
  * Unity Pro Game Engine 
