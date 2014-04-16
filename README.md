@@ -44,3 +44,13 @@ Dragon Raiser:
  * Unity 2D tutorial
  * Tiled Map Editor
  * Tiled Map import plugin: https://github.com/9volt/tiled_unity 
+
+
+Spider:
+ * Spider and Beetle sprites by William.Thompsonj and RedShrike and other members of OpenGameArt.org http://opengameart.org
+ * Part or all of the graphic tiles used in this program is the Public domain roguelike tileset "RLTiles".  http://opengameart.org/content/dungeon-crawl-32x32-tiles
+ * Sounds created with www.bfxr.net
+ * Unity Pro Game Engine 
+ * Unity 2D tutorial
+ * Tiled Map Editor
+ * Tiled Map import plugin: https://github.com/9volt/tiled_unity 
